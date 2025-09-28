@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenários e Grupos</title>
+    <!-- Carrega o Tailwind CSS CDN para estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define a fonte Inter para todo o corpo do documento */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-8">
+    <!-- Contêiner principal para centralizar o conteúdo e aplicar estilos responsivos -->
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 bg-white shadow-lg rounded-xl max-w-4xl w-full">
+
+        <!-- Seção do Cabeçalho - Cenários -->
+        <header class="text-center mb-8 pb-4 border-b border-gray-200">
+            <h1 class="text-4xl font-extrabold text-blue-700 mb-4 rounded-lg p-2 bg-blue-50">
+                Informações dos Cenários
+            </h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-lg text-gray-800">
+                <p class="bg-blue-100 p-3 rounded-lg shadow-sm">Cenário 1 - <span class="font-semibold">COAS Prof Marta</span></p>
+                <p class="bg-blue-100 p-3 rounded-lg shadow-sm">Cenário 2 - <span class="font-semibold">Carlos</span></p>
+                <p class="bg-blue-100 p-3 rounded-lg shadow-sm">Cenário 3 - <span class="font-semibold">CIDHA Prof Rodrigo</span></p>
+                <p class="bg-blue-100 p-3 rounded-lg shadow-sm">Cenário 4 - <span class="font-semibold">Profª Keila</span></p>
+                <p class="bg-blue-100 p-3 rounded-lg shadow-sm">Cenário 5 - <span class="font-semibold">UNIVASF-Dr Samuel</span></p>
+            </div>
+        </header>
+
+        <!-- Seção Principal - Grupos -->
+        <main class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-green-700 mb-6 rounded-lg p-2 bg-green-50">
+                Informações dos Grupos
+            </h2>
+
+            <!-- Grupos A -->
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 bg-green-100 p-3 rounded-lg shadow-md">
+                    GRUPO A (obs.: De forma a fechar as 15 semanas desses grupos, após 19/11, terão outra 01/12)
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-green-200">
+                        <h4 class="text-xl font-bold text-green-600 mb-2">GRUPO A1</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Rafael</li>
+                            <li>André</li>
+                            <li>Clodoaldo</li>
+                            <li>Pedro Kauã</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-green-200">
+                        <h4 class="text-xl font-bold text-green-600 mb-2">GRUPO A2</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Iracema</li>
+                            <li>Victor</li>
+                            <li>Lara</li>
+                            <li>Kaylane</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-green-200">
+                        <h4 class="text-xl font-bold text-green-600 mb-2">GRUPO A3</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Mariana</li>
+                            <li>Carlos</li>
+                            <li>Ana Luiza</li>
+                            <li>Raquel</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-green-200">
+                        <h4 class="text-xl font-bold text-green-600 mb-2">GRUPO A4</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>João Victor</li>
+                            <li>Lucas</li>
+                            <li>Willian</li>
+                            <li>Leandro</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-green-200">
+                        <h4 class="text-xl font-bold text-green-600 mb-2">GRUPO A5</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Paulo Cesar</li>
+                            <li>Luiz Filipe</li>
+                            <li>Ana Letícia</li>
+                            <li>Fernanda Rodrigues</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grupos B -->
+            <div>
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4 bg-purple-100 p-3 rounded-lg shadow-md">
+                    GRUPO B
+                </h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-purple-200">
+                        <h4 class="text-xl font-bold text-purple-600 mb-2">GRUPO B1</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Pedro Paulo</li>
+                            <li>Ivan</li>
+                            <li>Pablo</li>
+                            <li>Ed Fábio</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-purple-200">
+                        <h4 class="text-xl font-bold text-purple-600 mb-2">GRUPO B2</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Heitor</li>
+                            <li>Davi</li>
+                            <li>Joana</li>
+                            <li>Ellen</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-purple-200">
+                        <h4 class="text-xl font-bold text-purple-600 mb-2">GRUPO B3</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Arnaldo</li>
+                            <li>Maurício</li>
+                            <li>Jhennifer</li>
+                            <li>Renan</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-purple-200">
+                        <h4 class="text-xl font-bold text-purple-600 mb-2">GRUPO B4</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Fernanda Alves</li>
+                            <li>Keyla</li>
+                            <li>Miqueias</li>
+                            <li>João Neto</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-5 rounded-lg shadow-md border border-purple-200">
+                        <h4 class="text-xl font-bold text-purple-600 mb-2">GRUPO B5</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-1">
+                            <li>Daniel</li>
+                            <li>Deivid</li>
+                            <li>Anita</li>
+                            <li>Letícia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Seção de Consulta -->
+        <section class="text-center mt-8 pt-8 border-t border-gray-200">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-6 rounded-lg p-2 bg-indigo-50">
+                Consultar Cenário por Grupo e Data
+            </h2>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+                <input
+                    type="text"
+                    id="inputGrupo"
+                    placeholder="Ex: A1, B3"
+                    class="p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-1/3"
+                >
+                <input
+                    type="text"
+                    id="inputData"
+                    placeholder="Ex: DD/MM (01/08)"
+                    class="p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-1/3"
+                >
+                <button
+                    id="btnConsultar"
+                    class="px-6 py-3 bg-indigo-600 text-white font-bold rounded-lg shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-300 ease-in-out w-full sm:w-auto"
+                >
+                    Consultar
+                </button>
+            </div>
+            <div
+                id="resultadoConsulta"
+                class="mt-4 p-4 bg-indigo-100 text-indigo-800 text-xl font-semibold rounded-lg shadow-inner min-h-[60px] flex items-center justify-center"
+            >
+                Insira o grupo e a data para consultar o cenário.
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Dados da planilha fornecida, mapeando grupos para cenários por data (Ano fixo em 2025)
+        // Formato: { "GRUPO": { "YYYY-MM-DD": "Cenário Completo" } }
+        const dadosPlanilha = {
+            "A1": {
+                "2025-08-18": "Cenário 1 - COAS Prof Marta",
+                "2025-08-25": "Cenário 2 - Carlos",
+                "2025-09-01": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-08": "Cenário 4 - Profª Keila",
+                "2025-09-15": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-22": "Cenário 1 - COAS Prof Marta",
+                "2025-09-29": "Cenário 2 - Carlos",
+                "2025-10-08": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-15": "Cenário 4 - Profª Keila",
+                "2025-10-22": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-29": "Cenário 1 - COAS Prof Marta",
+                "2025-11-05": "Cenário 2 - Carlos",
+                "2025-11-12": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-11-19": "Cenário 4 - Profª Keila",
+                "2025-12-01": "Cenário 5 - UNIVASF-Dr Samuel"
+            },
+            "A2": {
+                "2025-08-18": "Cenário 2 - Carlos",
+                "2025-08-25": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-01": "Cenário 4 - Profª Keila",
+                "2025-09-08": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-15": "Cenário 1 - COAS Prof Marta",
+                "2025-09-22": "Cenário 2 - Carlos",
+                "2025-09-29": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-08": "Cenário 4 - Profª Keila",
+                "2025-10-15": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-22": "Cenário 1 - COAS Prof Marta",
+                "2025-10-29": "Cenário 2 - Carlos",
+                "2025-11-05": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-11-12": "Cenário 4 - Profª Keila",
+                "2025-11-19": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-12-01": "Cenário 1 - COAS Prof Marta"
+            },
+            "A3": {
+                "2025-08-18": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-08-25": "Cenário 4 - Profª Keila",
+                "2025-09-01": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-08": "Cenário 1 - COAS Prof Marta",
+                "2025-09-15": "Cenário 2 - Carlos",
+                "2025-09-22": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-29": "Cenário 4 - Profª Keila",
+                "2025-10-08": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-15": "Cenário 1 - COAS Prof Marta",
+                "2025-10-22": "Cenário 2 - Carlos",
+                "2025-10-29": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-11-05": "Cenário 4 - Profª Keila",
+                "2025-11-12": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-11-19": "Cenário 1 - COAS Prof Marta",
+                "2025-12-01": "Cenário 2 - Carlos"
+            },
+            "A4": {
+                "2025-08-18": "Cenário 4 - Profª Keila",
+                "2025-08-25": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-01": "Cenário 1 - COAS Prof Marta",
+                "2025-09-08": "Cenário 2 - Carlos",
+                "2025-09-15": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-22": "Cenário 4 - Profª Keila",
+                "2025-09-29": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-08": "Cenário 1 - COAS Prof Marta",
+                "2025-10-15": "Cenário 2 - Carlos",
+                "2025-10-22": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-29": "Cenário 4 - Profª Keila",
+                "2025-10-05": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-11-12": "Cenário 1 - COAS Prof Marta",
+                "2025-11-19": "Cenário 2 - Carlos",
+                "2025-12-01": "Cenário 3 - CIDHA Prof Rodrigo"
+            },
+            "A5": {
+                "2025-08-18": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-08-25": "Cenário 1 - COAS Prof Marta",
+                "2025-09-01": "Cenário 2 - Carlos",
+                "2025-09-08": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-15": "Cenário 4 - Profª Keila",
+                "2025-09-22": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-29": "Cenário 1 - COAS Prof Marta",
+                "2025-10-08": "Cenário 2 - Carlos",
+                "2025-10-15": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-22": "Cenário 4 - Profª Keila",
+                "2025-10-29": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-11-05": "Cenário 1 - COAS Prof Marta",
+                "2025-11-12": "Cenário 2 - Carlos",
+                "2025-11-19": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-12-01": "Cenário 4 - Profª Keila"
+            },
+            "B1": {
+                "2025-08-13": "Cenário 1 - COAS Prof Marta",
+                "2025-08-20": "Cenário 2 - Carlos",
+                "2025-08-27": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-03": "Cenário 4 - Profª Keila",
+                "2025-09-10": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-17": "Cenário 1 - COAS Prof Marta",
+                "2025-09-24": "Cenário 2 - Carlos",
+                "2025-10-01": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-06": "Cenário 4 - Profª Keila",
+                "2025-10-13": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-20": "Cenário 1 - COAS Prof Marta",
+                "2025-11-03": "Cenário 2 - Carlos",
+                "2025-11-10": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-11-17": "Cenário 4 - Profª Keila",
+                "2025-11-24": "Cenário 5 - UNIVASF-Dr Samuel"
+            },
+            "B2": {
+                "2025-08-13": "Cenário 2 - Carlos",
+                "2025-08-20": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-08-27": "Cenário 4 - Profª Keila",
+                "2025-09-03": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-10": "Cenário 1 - COAS Prof Marta",
+                "2025-09-17": "Cenário 2 - Carlos",
+                "2025-09-24": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-01": "Cenário 4 - Profª Keila",
+                "2025-10-06": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-13": "Cenário 1 - COAS Prof Marta",
+                "2025-10-20": "Cenário 2 - Carlos",
+                "2025-11-03": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-11-10": "Cenário 4 - Profª Keila",
+                "2025-11-17": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-11-24": "Cenário 1 - COAS Prof Marta"
+            },
+            "B3": {
+                "2025-08-13": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-08-20": "Cenário 4 - Profª Keila",
+                "2025-08-27": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-03": "Cenário 1 - COAS Prof Marta",
+                "2025-09-10": "Cenário 2 - Carlos",
+                "2025-09-17": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-24": "Cenário 4 - Profª Keila",
+                "2025-10-01": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-06": "Cenário 1 - COAS Prof Marta",
+                "2025-10-13": "Cenário 2 - Carlos",
+                "2025-10-20": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-11-03": "Cenário 4 - Profª Keila",
+                "2025-11-10": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-11-17": "Cenário 1 - COAS Prof Marta",
+                "2025-11-24": "Cenário 2 - Carlos"
+            },
+            "B4": {
+                "2025-08-13": "Cenário 4 - Profª Keila",
+                "2025-08-20": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-08-27": "Cenário 1 - COAS Prof Marta",
+                "2025-09-03": "Cenário 2 - Carlos",
+                "2025-09-10": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-17": "Cenário 4 - Profª Keila",
+                "2025-09-24": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-10-01": "Cenário 1 - COAS Prof Marta",
+                "2025-10-06": "Cenário 2 - Carlos",
+                "2025-10-13": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-20": "Cenário 4 - Profª Keila",
+                "2025-11-03": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-11-10": "Cenário 1 - COAS Prof Marta",
+                "2025-11-17": "Cenário 2 - Carlos",
+                "2025-11-24": "Cenário 3 - CIDHA Prof Rodrigo"
+            },
+            "B5": {
+                "2025-08-13": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-08-20": "Cenário 1 - COAS Prof Marta",
+                "2025-08-27": "Cenário 2 - Carlos",
+                "2025-09-03": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-09-10": "Cenário 4 - Profª Keila",
+                "2025-09-17": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-09-24": "Cenário 1 - COAS Prof Marta",
+                "2025-10-01": "Cenário 2 - Carlos",
+                "2025-10-06": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-10-13": "Cenário 4 - Profª Keila",
+                "2025-10-20": "Cenário 5 - UNIVASF-Dr Samuel",
+                "2025-11-03": "Cenário 1 - COAS Prof Marta",
+                "2025-11-10": "Cenário 2 - Carlos",
+                "2025-11-17": "Cenário 3 - CIDHA Prof Rodrigo",
+                "2025-11-24": "Cenário 4 - Profª Keila"
+            }
+        };
+
+        // Função para formatar a data para o padrão YYYY-MM-DD, assumindo o ano 2025
+        function formatarData(dataInput) {
+            // Remove espaços em branco
+            const cleanDataInput = dataInput.trim();
+            // Verifica se o formato é DD/MM
+            const parts = cleanDataInput.split('/');
+            if (parts.length === 2) {
+                const dia = String(parts[0]).padStart(2, '0');
+                const mes = String(parts[1]).padStart(2, '0');
+                const ano = '2025'; // Ano fixo como 2025
+                // Validação básica para dia e mês
+                if (parseInt(dia) > 0 && parseInt(dia) <= 31 && parseInt(mes) > 0 && parseInt(mes) <= 12) {
+                    return `${ano}-${mes}-${dia}`;
+                }
+            }
+            return null; // Retorna null se o formato for inválido ou os valores de dia/mês forem fora do comum
+        }
+
+        // Adiciona um listener de evento ao botão de consulta
+        document.getElementById('btnConsultar').addEventListener('click', () => {
+            const inputGrupo = document.getElementById('inputGrupo').value.toUpperCase().trim(); // Converte para maiúsculas e remove espaços
+            const inputData = document.getElementById('inputData').value;
+            const resultadoConsulta = document.getElementById('resultadoConsulta');
+
+            if (!inputGrupo || !inputData) {
+                resultadoConsulta.textContent = "Por favor, preencha o grupo e a data.";
+                resultadoConsulta.classList.remove('bg-green-100', 'text-green-800');
+                resultadoConsulta.classList.add('bg-red-100', 'text-red-800');
+                return;
+            }
+
+            const dataFormatada = formatarData(inputData);
+
+            if (!dataFormatada) {
+                resultadoConsulta.textContent = "Formato de data inválido. Use DD/MM (ex: 01/08).";
+                resultadoConsulta.classList.remove('bg-green-100', 'text-green-800');
+                resultadoConsulta.classList.add('bg-red-100', 'text-red-800');
+                return;
+            }
+
+            // Procura o cenário na planilha de dados
+            const cenarioDoGrupo = dadosPlanilha[inputGrupo];
+
+            if (cenarioDoGrupo && cenarioDoGrupo[dataFormatada]) {
+                resultadoConsulta.textContent = `O grupo ${inputGrupo} estará em: ${cenarioDoGrupo[dataFormatada]}`;
+                resultadoConsulta.classList.remove('bg-red-100', 'text-red-800');
+                resultadoConsulta.classList.add('bg-green-100', 'text-green-800');
+            } else {
+                resultadoConsulta.textContent = `Nenhum cenário encontrado para o grupo ${inputGrupo} na data ${inputData}.`;
+                resultadoConsulta.classList.remove('bg-green-100', 'text-green-800');
+                resultadoConsulta.classList.add('bg-red-100', 'text-red-800');
+            }
+        });
+    </script>
+</body>
+</html>
