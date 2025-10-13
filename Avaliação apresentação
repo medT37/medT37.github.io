@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação da Apresentação</title>
+    <style>
+        /* Imagens de fundo para o papel de parede */
+        /* O estilo 'background-image' foi gerado com uma URL de exemplo. Em um ambiente real, você precisaria de URLs válidas ou imagens codificadas. */
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Altera para o topo para melhor visualização do conteúdo */
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px 0; /* Adiciona padding no topo e base */
+            text-align: center;
+            background-color: #f0f0f0;
+            
+            /* Papel de Parede: Cachorros e Morcegos */
+            background-image: url('https://picsum.photos/800/600?random=1'), url('https://picsum.photos/800/600?random=2'); /* Exemplo de URLs */
+            background-position: top left, bottom right;
+            background-repeat: no-repeat, no-repeat;
+            background-size: 20% auto, 20% auto; /* Tamanho dos elementos de fundo */
+            background-attachment: fixed; /* Mantém as imagens fixas ao rolar */
+        }
+        
+        /* Container principal para centralizar o conteúdo */
+        .main-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 700px;
+            z-index: 10; /* Garante que o conteúdo fique acima do background */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+        }
+        
+        .stage-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        /* Estilos da Etapa 1: Avaliação da Apresentação */
+        #stage1-container h2 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .vote-button {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: none;
+            color: white;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+        
+        .vote-button span {
+            font-size: 2.5em; /* Tamanho maior para o emoji */
+            margin-bottom: 5px;
+        }
+        
+        .vote-button:disabled {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+        
+        .vote-button:hover:not(:disabled) {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        
+        #green { background-color: #4CAF50; }
+        #yellow { background-color: #FFC107; color: #333; }
+        #red { background-color: #F44336; }
+        
+        /* Estilos da Etapa 2: Compartilhamento do Conhecimento */
+        #stage2-container {
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 30px;
+            display: none; /* Começa escondida */
+        }
+        
+        #stage2-container h2 {
+            color: #00796b;
+            margin-bottom: 20px;
+        }
+        
+        .share-button {
+            width: 150px;
+            padding: 15px;
+            margin: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        #share-yes { background-color: #00bcd4; }
+        #share-no { background-color: #ff5722; }
+        
+        #share-yes:hover { background-color: #00acc1; }
+        #share-no:hover { background-color: #e64a19; }
+        
+        /* Mensagens e Botões de Ação */
+        #message {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #555;
+            min-height: 2em;
+            font-weight: bold;
+        }
+
+        .action-button {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            margin: 10px 5px;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        
+        #next-vote-btn { background-color: #2196F3; }
+        #next-vote-btn:hover { background-color: #1976D2; }
+        
+        #show-results-btn { background-color: #9C27B0; }
+        #show-results-btn:hover { background-color: #7B1FA2; }
+        
+        #reset-btn { background-color: #e53935; }
+        #reset-btn:hover { background-color: #c62828; }
+
+        #next-stage-btn { background-color: #009688; display: none; } /* Começa escondido */
+        #next-stage-btn:hover { background-color: #00796b; }
+        
+        /* Estilos do Gráfico de Resultados */
+        .results-section {
+            display: none;
+            width: 100%;
+            margin-top: 40px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        
+        .results-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .bar-container {
+            width: 100%;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1em;
+            color: #333;
+        }
+        
+        .bar-label {
+            width: 120px; /* Aumentado para acomodar os labels */
+            text-align: right;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+        
+        .bar {
+            height: 25px;
+            border-radius: 5px;
+            transition: width 0.5s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: relative;
+            flex-grow: 1; /* Permite que a barra cresça */
+            max-width: calc(100% - 135px); /* Limita o tamanho máximo da barra */
+        }
+        
+        .bar-value {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        #green-bar { background-color: #4CAF50; }
+        #yellow-bar { background-color: #FFC107; }
+        #red-bar { background-color: #F44336; }
+        
+        /* Estilos do Gráfico da Etapa 2 */
+        #share-yes-bar { background-color: #00bcd4; }
+        #share-no-bar { background-color: #ff5722; }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Avaliação do Projeto de Extensão</h1>
+
+        <div id="stage1-container" class="stage-container">
+            <h2>O que você achou da nossa apresentação?</h2>
+            
+            <div class="buttons-container">
+                <button class="vote-button" id="green" data-value="green"><span>😍</span>Amei</button>
+                <button class="vote-button" id="yellow" data-value="yellow"><span>🤔</span>Melhorar</button>
+                <button class="vote-button" id="red" data-value="red"><span>😒</span>Chato</button>
+            </div>
+            
+            <p id="message">Clique em uma opção para votar.</p>
+
+            <button id="next-stage-btn" class="action-button">Próxima Etapa de Avaliação</button>
+        </div>
+
+        <div id="stage2-container" class="stage-container">
+            <h2>Você vai compartilhar o que aprendeu com outras pessoas?</h2>
+            
+            <div class="buttons-container">
+                <button class="share-button" id="share-yes" data-value="yes">Sim! 🎉</button>
+                <button class="share-button" id="share-no" data-value="no">Não 😟</button>
+            </div>
+            
+            <p id="share-message"></p>
+        </div>
+
+        <div id="facilitator-controls" style="margin-top: 20px;">
+            <button id="next-vote-btn" class="action-button">Próximo Voto</button>
+            <button id="show-results-btn" class="action-button">Ver Resultados</button>
+            <button id="reset-btn" class="action-button">Reiniciar Votação</button>
+        </div>
+        
+        <div class="results-section" id="results-section">
+            
+            <h3>Resultados da Apresentação</h3>
+            <div class="bar-chart">
+                <div class="bar-container">
+                    <span class="bar-label">Amei:</span>
+                    <div id="green-bar" class="bar">
+                        <span class="bar-value" id="green-count">0</span>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <span class="bar-label">Melhorar:</span>
+                    <div id="yellow-bar" class="bar">
+                        <span class="bar-value" id="yellow-count">0</span>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <span class="bar-label">Chato:</span>
+                    <div id="red-bar" class="bar">
+                        <span class="bar-value" id="red-count">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Resultados de Compartilhamento</h3>
+            <div class="bar-chart">
+                <div class="bar-container">
+                    <span class="bar-label">Compartilhar (Sim):</span>
+                    <div id="share-yes-bar" class="bar">
+                        <span class="bar-value" id="share-yes-count">0</span>
+                    </div>
+                </div>
+                <div class="bar-container">
+                    <span class="bar-label">Não Compartilhar (Não):</span>
+                    <div id="share-no-bar" class="bar">
+                        <span class="bar-value" id="share-no-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Objeto para armazenar os votos da Etapa 1
+        const votes = {
+            green: 0,
+            yellow: 0,
+            red: 0
+        };
+
+        // Objeto para armazenar os votos da Etapa 2
+        const shareVotes = {
+            yes: 0,
+            no: 0
+        };
+
+        // Elementos da Etapa 1
+        const voteButtons = document.querySelectorAll('.vote-button');
+        const messageEl = document.getElementById('message');
+        const nextStageBtn = document.getElementById('next-stage-btn');
+        const stage1Container = document.getElementById('stage1-container');
+
+        // Elementos da Etapa 2
+        const shareButtons = document.querySelectorAll('.share-button');
+        const shareMessageEl = document.getElementById('share-message');
+        const stage2Container = document.getElementById('stage2-container');
+
+        // Controles e Resultados
+        const nextVoteBtn = document.getElementById('next-vote-btn');
+        const showResultsBtn = document.getElementById('show-results-btn');
+        const resetBtn = document.getElementById('reset-btn');
+        const resultsSection = document.getElementById('results-section');
+
+        // Barras da Etapa 1
+        const greenBar = document.getElementById('green-bar');
+        const yellowBar = document.getElementById('yellow-bar');
+        const redBar = document.getElementById('red-bar');
+        const greenCount = document.getElementById('green-count');
+        const yellowCount = document.getElementById('yellow-count');
+        const redCount = document.getElementById('red-count');
+
+        // Barras da Etapa 2
+        const shareYesBar = document.getElementById('share-yes-bar');
+        const shareNoBar = document.getElementById('share-no-bar');
+        const shareYesCount = document.getElementById('share-yes-count');
+        const shareNoCount = document.getElementById('share-no-count');
+
+        let isStage1Voted = false;
+        let isStage2Voted = false;
+
+        function updateResults() {
+            // Atualiza resultados da Etapa 1
+            const totalVotes = votes.green + votes.yellow + votes.red;
+            if (totalVotes === 0) {
+                greenBar.style.width = '0%';
+                yellowBar.style.width = '0%';
+                redBar.style.width = '0%';
+            } else {
+                greenBar.style.width = ${(votes.green / totalVotes) * 100}%;
+                yellowBar.style.width = ${(votes.yellow / totalVotes) * 100}%;
+                redBar.style.width = ${(votes.red / totalVotes) * 100}%;
+            }
+            greenCount.textContent = votes.green;
+            yellowCount.textContent = votes.yellow;
+            redCount.textContent = votes.red;
+
+            // Atualiza resultados da Etapa 2
+            const totalShareVotes = shareVotes.yes + shareVotes.no;
+            if (totalShareVotes === 0) {
+                shareYesBar.style.width = '0%';
+                shareNoBar.style.width = '0%';
+            } else {
+                shareYesBar.style.width = ${(shareVotes.yes / totalShareVotes) * 100}%;
+                shareNoBar.style.width = ${(shareVotes.no / totalShareVotes) * 100}%;
+            }
+            shareYesCount.textContent = shareVotes.yes;
+            shareNoCount.textContent = shareVotes.no;
+        }
+
+        function disableVoting(buttons) {
+            buttons.forEach(button => button.disabled = true);
+        }
+
+        function enableVoting() {
+            // Habilita Etapa 1
+            voteButtons.forEach(button => button.disabled = false);
+            messageEl.textContent = 'Clique em uma opção para votar.';
+            nextStageBtn.style.display = 'none';
+            isStage1Voted = false;
+            
+            // Oculta e Desabilita Etapa 2
+            stage2Container.style.display = 'none';
+            shareButtons.forEach(button => button.disabled = true);
+            shareMessageEl.textContent = '';
+            isStage2Voted = false;
+        }
+
+        // Listener para Etapa 1
+        voteButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (!isStage1Voted) {
+                    const voteType = button.getAttribute('data-value');
+                    votes[voteType]++;
+                    messageEl.textContent = 'Voto registrado! Prossiga para a próxima etapa.';
+                    disableVoting(voteButtons);
+                    nextStageBtn.style.display = 'block'; // Mostra o botão para a próxima etapa
+                    isStage1Voted = true;
+                    updateResults();
+                }
+            });
+        });
+        
+        // Listener para avançar para Etapa 2
+        nextStageBtn.addEventListener('click', () => {
+            stage1Container.style.display = 'none';
+            stage2Container.style.display = 'flex';
+            shareButtons.forEach(button => button.disabled = false); // Habilita votação da Etapa 2
+            nextStageBtn.style.display = 'none'; // Esconde o botão da etapa anterior
+        });
+
+        // Listener para Etapa 2
+        shareButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (!isStage2Voted) {
+                    const voteType = button.getAttribute('data-value');
+                    shareVotes[voteType]++;
+                    shareMessageEl.textContent = 'Obrigado por sua avaliação!';
+                    disableVoting(shareButtons);
+                    isStage2Voted = true;
+                    updateResults();
+                    // Opcional: Aqui você pode adicionar um feedback final ou um botão para voltar ao início
+                }
+            });
+        });
+
+        // Listener para Próximo Voto
+        nextVoteBtn.addEventListener('click', () => {
+            stage1Container.style.display = 'flex';
+            enableVoting();
+            resultsSection.style.display = 'none';
+        });
+
+        // Listener para Ver Resultados
+        showResultsBtn.addEventListener('click', () => {
+            resultsSection.style.display = 'block';
+            updateResults();
+        });
+
+        // Listener para Reiniciar Votação
+        resetBtn.addEventListener('click', () => {
+            const confirmReset = confirm("Tem certeza que deseja reiniciar a votação? Todos os votos serão perdidos.");
+            if (confirmReset) {
+                // Reinicia Etapa 1
+                votes.green = 0;
+                votes.yellow = 0;
+                votes.red = 0;
+
+                // Reinicia Etapa 2
+                shareVotes.yes = 0;
+                shareVotes.no = 0;
+                
+                updateResults();
+                resultsSection.style.display = 'none';
+                stage1Container.style.display = 'flex';
+                enableVoting();
+                messageEl.textContent = 'Votação reiniciada! Pronto para o próximo grupo.';
+            }
+        });
+
+        // Inicializa o estado
+        enableVoting(); 
+    </script>
+</body>
+</html>
